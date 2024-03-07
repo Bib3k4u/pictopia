@@ -69,6 +69,7 @@ app.get('/api/images', async (req, res) => {
         const query = `select data from Images;`
         const response = await sequelize.query(query, { type: sequelize.QueryTypes.SELECT });
         res.json(response);
+        console.log(response)
     } catch (error) {
         console.error('Error fetching images from database:', error);
         res.status(500).json({ message: 'Internal server error' });
